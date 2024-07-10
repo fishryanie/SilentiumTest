@@ -1,17 +1,11 @@
-import {AxiosError} from 'axios';
+import {ToastData, ToastOptions} from 'react-native-toast-message';
 
 export type PercentString = `${number}%`;
 export type Size = number | PercentString;
 export type AnyObject = {[key: string]: any};
-export type ApiResponse = {
-  code: number;
-  message: string;
-};
-export type ResponseData<D> = ApiResponse & {
-  data?: D;
-};
-export type AppAxiosError = AxiosError<
-  ApiResponse & {
-    data?: AnyObject;
-  }
->;
+
+export type ToastProps = ToastData &
+  Omit<ToastOptions, 'type' | 'props' | 'onPress' | 'onHide' | 'onShow'> & {
+    type: 'error' | 'success' | 'warning';
+    action?: {title: string; onPress: () => void};
+  };

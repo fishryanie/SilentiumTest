@@ -9,11 +9,13 @@
 import React from 'react';
 import Routes from 'routes';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {CustomToast} from 'components/common';
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <Routes />
+      <CustomToast />
     </SafeAreaProvider>
   );
 }

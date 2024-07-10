@@ -1,51 +1,56 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
-import {Block, List, Text} from 'components/Base';
-import {TouchableOpacity} from 'react-native';
-import {Header} from 'components/common';
-import {navigationRef} from 'routes';
-import {NewsInfo} from 'types/news';
+import {Block, List, Pressable, Text} from 'components/Base';
+import {StoriesInfo, StoriesMenu} from 'types/news';
+import {fetchStoriesList} from 'services/stories';
+import {COLORS} from 'themes/color';
+import StoryHeader from './components/StoryHeader';
+import StoryItem from './components/StoryItem';
+import StoryShimmer from './components/StoryShimmer';
+
+const listMenuStories: StoriesMenu[] = [
+  {title: 'New Stories', type: 'newstories'},
+  {title: 'Best Stories', type: 'beststories'},
+  {title: 'Top Stories', type: 'topstories'},
+];
 
 export default function NewsScreen() {
-  const [stories, setStories] = useState<NewsInfo[]>([]);
-  const [page, setPage] = useState<number>(1);
+  const [stories, setStories] = useState<StoriesInfo[]>();
+  const [menuSelected, setMenuSelected] = useState<StoriesMenu>(listMenuStories[0]);
+  const [isLoadingStoriesList, setLoadingStoriesList] = useState(false);
 
   useEffect(() => {
-    fetchStories();
-  }, [page]);
-
-  const fetchStories = async () => {
-    try {
-      const response = await axios.get(`https://hacker-news.firebaseio.com/v0/topstories.json`);
-      const storyIds = response.data.slice((page - 1) * 10, page * 10);
-      const storyPromises = storyIds.map((id: number) =>
-        axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`),
-      );
-      const storyResults = await Promise.all(storyPromises);
-      setStories(storyResults.map(result => result.data));
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const renderItem = ({item}: {item: NewsInfo}) => (
-    <TouchableOpacity onPress={() => navigationRef.navigate('NewsDetailScreen', {storyId: item.id})}>
-      <Block padding={20} borderTopWidth={1} borderTopColor={'#ccc'}>
-        <Text fontSize={18}>{item.title}</Text>
-      </Block>
-    </TouchableOpacity>
-  );
+    setLoadingStoriesList(true);
+    fetchStoriesList(menuSelected.type)
+      .then(setStories)
+      .finally(() => setLoadingStoriesList(false));
+  }, [menuSelected.type]);
 
   return (
-    <Block flex>
-      <Header />
+    <Block flex backgroundColor={COLORS.white}>
+      <StoryHeader />
+      <Block rowCenter paddingVertical={15} backgroundColor={COLORS.white}>
+        {listMenuStories.map(item => (
+          <Pressable
+            radius={20}
+            marginLeft={12}
+            key={item.type}
+            paddingVertical={8}
+            paddingHorizontal={15}
+            onPress={() => setMenuSelected(item)}
+            backgroundColor={menuSelected.type === item.type ? COLORS.primary : COLORS.bgPrimary}>
+            <Text color={menuSelected.type === item.type ? COLORS.white : undefined}>{item.title}</Text>
+          </Pressable>
+        ))}
+      </Block>
       <List
         data={stories}
-        renderItem={renderItem}
-        keyExtractor={item => item.id.toString()}
-        onEndReached={() => setPage(prevPage => prevPage + 1)}
-        onEndReachedThreshold={0.5}
+        keyExtract="id"
+        isLoading={isLoadingStoriesList}
+        renderItem={StoryItem}
+        LoadingComponent={StoryShimmer}
+        contentContainerStyle={{gap: 5}}
+        backgroundColor={COLORS.bgPrimary}
       />
     </Block>
   );

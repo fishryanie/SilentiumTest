@@ -2,13 +2,18 @@ export const COLORS = {
   white: '#ffffff',
   black: '#000000',
 
-  bgPrimary: '#314776',
-  bgSecondary: '#f6f5fb',
-
-  textPrimary: '#6c6c6c',
-  textSecondary: '#e5e6e9',
-
+  primary: '#24294a',
+  bgPrimary: '#f3f3f6',
+  textPrimary: '#434343',
   border: '#ccc',
+
+  textSuccess: '#1f8722',
+  textWarning: '#f08135',
+  textError: '#d9100a',
+
+  bgSuccess: '#def1d7',
+  bgWarning: '#fef7ec',
+  bgError: '#fae1db',
 
   transparent: 'transparent',
 

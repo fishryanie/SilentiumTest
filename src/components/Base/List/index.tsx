@@ -70,8 +70,9 @@ const ListInner = <T,>(
   }, [emptyPlaceholderTitle, isLoading, props.data?.length]);
 
   if (isLoading && LoadingComponent) {
-    <LoadingComponent />;
+    return <LoadingComponent />;
   }
+  
   return (
     <FlatList
       contentContainerStyle={[

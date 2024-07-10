@@ -17,6 +17,7 @@ export type PressableProps = TouchableOpacityProps &
     flex: number | boolean;
     row: boolean;
     wrap: boolean;
+    gap: Size;
     rowCenter: boolean;
     contentCenter: boolean;
     alignItems: ViewStyle['alignItems'];
@@ -85,6 +86,7 @@ export const Pressable = forwardRef(
       row,
       flex,
       wrap,
+      gap,
       rowCenter,
       contentCenter,
       alignItems,
@@ -168,6 +170,7 @@ export const Pressable = forwardRef(
       opacity !== undefined ? {opacity} : undefined,
       transform !== undefined ? {transform} : undefined,
       //
+      gap !== undefined ? {gap: hs(gap)} : undefined,
       padding !== undefined ? {padding: hs(padding)} : undefined,
       paddingVertical !== undefined ? {paddingVertical: hs(paddingVertical)} : undefined,
       paddingHorizontal !== undefined ? {paddingHorizontal: hs(paddingHorizontal)} : undefined,

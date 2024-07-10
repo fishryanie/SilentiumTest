@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Block, BlockProps, Image, Text} from 'components/Base';
 import {ResizeMode} from 'react-native-fast-image';
+import {getInitialsName} from 'utils/helper';
 import {COLORS} from 'themes/color';
 
 type AvatarProps = Partial<{
@@ -17,7 +18,7 @@ export const Avatar = ({
   size = 50,
   fontDecrease = 3,
   resizeMode = 'cover',
-  backgroundColor = COLORS.bgPrimary,
+  backgroundColor = COLORS.primary,
   ...props
 }: AvatarProps & BlockProps) => {
   const [loadFailed, setLoadFailed] = useState(false);
@@ -32,7 +33,7 @@ export const Avatar = ({
       } else {
         return (
           <Text paddingHorizontal={5} numberOfLines={1} color={COLORS.white} fontSize={size / fontDecrease}>
-            {getInitials(name.replace(/[^\w\s]/gi, ''))}
+            {getInitialsName(name.replace(/[^\w\s]/gi, ''))}
           </Text>
         );
       }
@@ -45,16 +46,3 @@ export const Avatar = ({
     </Block>
   );
 };
-
-function getInitials(name: string) {
-  const words = name.split(' ');
-  let result = '';
-  for (const word of words) {
-    result += word.charAt(0).toUpperCase();
-  }
-  if (!result) {
-    console.warn('Could not get abbr from name');
-    result = name;
-  }
-  return result;
-}

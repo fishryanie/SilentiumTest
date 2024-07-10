@@ -1,4 +1,6 @@
-export type NewsInfo = {
+export type StoriesApi = 'newstories' | 'beststories' | 'topstories';
+export type StoriesMenu = {title: string; type: StoriesApi};
+export type StoriesInfo = {
   id: number;
   by: string;
   url: string;

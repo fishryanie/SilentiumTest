@@ -8,11 +8,11 @@ import {Avatar, Header} from 'components/common';
 import {CommentInfo} from 'types/comment';
 import {decodeHtml} from 'utils/helper';
 import {COLORS} from 'themes/color';
-import {NewsInfo} from 'types/news';
+import {StoriesInfo} from 'types/news';
 
 export default function NewsDetailScreen({route}: NewsDetailScreenProps) {
   const {storyId} = route.params;
-  const [story, setStory] = useState<NewsInfo | null>(null);
+  const [story, setStory] = useState<StoriesInfo | null>(null);
   const [comments, setComments] = useState<CommentInfo[]>([]);
 
   useEffect(() => {
