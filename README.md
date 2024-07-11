@@ -7,11 +7,11 @@
 - [Installation](#installation)
 - [Running the App](#running-the-app)
 - [Troubleshooting](#troubleshooting)
-- [☎️ Contact](#contact)
+- [Contact](#contact)
 
 ## Introduction
 
-[![Product Name Screen Shot][product-screenshot]](https://github.com/fishryanie/SilentiumTest/blob/master/demo.jpg)
+![Project Logo](./demo.jpg)
 
 - View new/best/top stories on the screen
 - View details and comments for each post in the list.
