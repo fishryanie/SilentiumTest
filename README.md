@@ -11,7 +11,7 @@
 
 ## Introduction
 
-[![Product Name Screen Shot][product-screenshot]](./demo.jpg)
+[![Product Name Screen Shot][product-screenshot]](https://github.com/fishryanie/SilentiumTest/blob/master/demo.jpg)
 
 - View new/best/top stories on the screen
 - View details and comments for each post in the list.
