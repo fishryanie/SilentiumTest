@@ -1,4 +1,4 @@
-# <h1 id='top' align="center">Welcome to FitMate 👋</h1>
+# <h1 id='top' align="center">Welcome to Silentium Test 👋</h1>
 
 ## Table of Contents
 
