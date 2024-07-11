@@ -40,7 +40,6 @@ export type TextProps = RNTextProps &
     color: ColorValue;
     fontSize: number;
     fontWeight: TextStyle['fontWeight'];
-    // font: keyof typeof FontBeVietnamPro;
     textAlign: TextStyle['textAlign'];
     textTransform: TextStyle['textTransform'];
     textDecorationLine: TextStyle['textDecorationLine'];
@@ -82,7 +81,6 @@ export const Text = ({
   transform,
   color = COLORS.textPrimary,
   fontSize = 14,
-  // font = 'regular',
   fontWeight,
   textAlign,
   textTransform,
@@ -96,7 +94,6 @@ export const Text = ({
       color,
       fontSize: fs(fontSize),
       fontWeight: fontWeight,
-      // fontFamily: FontBeVietnamPro[font],
     },
     flex !== undefined ? handleFlex(flex) : undefined,
     alignSelf ? {alignSelf} : undefined,

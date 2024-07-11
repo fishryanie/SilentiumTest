@@ -1,4 +1,4 @@
-import {StoriesApi, StoriesInfo} from 'types/news';
+import {StoriesApi, StoriesInfo} from 'types/stories';
 import api from 'utils/axios';
 
 export const fetchStoriesIdsList = async (url: StoriesApi) => {

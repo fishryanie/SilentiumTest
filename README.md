@@ -3,18 +3,29 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Download](#download)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Running the App](#running-the-app)
 - [Troubleshooting](#troubleshooting)
-- [Contact](#contact)
+- [Contact](#-contact)
 
 ## Introduction
 
-![Project Logo](./demo.jpg)
+![Project Logo](./src/assets/images/imgDemo.jpg)
 
 - View new/best/top stories on the screen
 - View details and comments for each post in the list.
+
+## Download
+
+You can download demo for android platform here:
+
+<div>
+    <a href="https://drive.google.com/file/d/1fNk5I1QV3pYhE0yrDQx4i_-BKvSetoVl/view?usp=sharing" download="app-release" >
+        <img src="./src/assets/images/apk.png" alt="Download apk" width="250" height="100">
+    </a>
+</div>
 
 ## Prerequisites
 
@@ -27,20 +38,20 @@ Before you begin, ensure you have the following installed on your system:
 - [Xcode](https://developer.apple.com/xcode/) (for iOS development)
 - [Android Studio](https://developer.android.com/studio) (for Android development)
 
-## 📲 Installation
+## Installation
 
 Follow these steps to get the development environment running.
 
 ### Clone the repository
 
 ```sh
-git clone https://github.com/your-username/your-repo.git
+git clone https://github.com/fishryanie/SilentiumTest
 ```
 
 ### Install package
 
 ```javascript
-yarn;
+yarn
 ```
 
 Or
@@ -50,17 +61,12 @@ npm install
 ```
 
 #### Platform IOS install Pods
-
-If you using apple silicon
-
-```javascript
-yarn pod-install:apple-silicon
-```
-
-If you using intel silicon
-
 ```javascript
 cd ios && pod-install && cd ..
+```
+Or apple silicon
+```javascript
+yarn pod-install:apple-silicon
 ```
 
 ### Running the App
@@ -85,12 +91,11 @@ If you encounter issues, consider the following steps:
 - Verify that your emulators or devices are properly set up.
 - Check for any error messages in the terminal and follow the suggested solutions.
 
-## ☎️ Contact
+## Contact
 
-Project create by [Hồng Quân](https://github.com/fishryanie). If you have any questions or problems about the application, please contact me via email: [qphanquan1998@gmail.com](qphanquan1998@gmail.com).
+If you have any questions or feedback, please feel free to contact us at:
 
-You can also find me on Github at: [Phan Hồng Quân](https://github.com/fishryanie).
-
-❤️ Thanks!
+- Email: [qphanquan1998@gmail.com](qphanquan1998@gmail.com)
+- GitHub: [https://github.com/fishryanie](https://github.com/fishryanie)
 
 <p align="right">(<a href="#top">back to top</a>)</p>

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useCallback, useEffect, useState} from 'react';
 import {Block, List, Pressable, Text} from 'components/Base';
-import {StoriesInfo, StoriesMenu} from 'types/news';
+import {StoriesInfo, StoriesMenu} from 'types/stories';
 import {fetchStoriesIdsList, fetchStoriesList} from 'services/stories';
 import {COLORS} from 'themes/color';
 import StoryHeader from './components/StoryHeader';

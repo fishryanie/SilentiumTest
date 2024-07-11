@@ -5,7 +5,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {navigationRef} from 'routes';
 import {Avatar} from 'components/common';
 import {COLORS} from 'themes/color';
-import {StoriesInfo} from 'types/news';
+import {StoriesInfo} from 'types/stories';
 import {Image} from 'react-native';
 import {hs} from 'themes/helper';
 import {ICONS} from 'assets';

@@ -10,7 +10,7 @@ import {ActivityIndicator, Image} from 'react-native';
 import {fetchCommentList} from 'services/comment';
 import {Avatar} from 'components/common';
 import {CommentInfo} from 'types/comment';
-import {StoriesInfo} from 'types/news';
+import {StoriesInfo} from 'types/stories';
 import {COLORS} from 'themes/color';
 import {width} from 'themes/helper';
 import {ceil} from 'lodash';

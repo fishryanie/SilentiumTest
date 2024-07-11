@@ -4,7 +4,7 @@ import {Block, Pressable, Text} from 'components/Base';
 import {Image, ListRenderItem} from 'react-native';
 import {handleOpenLink} from 'utils/helper';
 import {Avatar} from 'components/common';
-import {StoriesInfo} from 'types/news';
+import {StoriesInfo} from 'types/stories';
 import {COLORS} from 'themes/color';
 import {navigationRef} from 'routes';
 import {ICONS} from 'assets';

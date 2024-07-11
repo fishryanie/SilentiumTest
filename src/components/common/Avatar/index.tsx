@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
-import {Block, BlockProps, Image, Text} from 'components/Base';
-import {ResizeMode} from 'react-native-fast-image';
+import {Block, BlockProps, Text} from 'components/Base';
 import {getInitialsName} from 'utils/helper';
 import {COLORS} from 'themes/color';
+import {Image, ImageResizeMode} from 'react-native';
 
 type AvatarProps = Partial<{
   name: string;
   uri: string;
   size: number;
-  resizeMode: ResizeMode;
+  resizeMode: ImageResizeMode;
   fontDecrease: number;
 }>;
 
@@ -26,7 +26,16 @@ export const Avatar = ({
 
   const _renderInner = () => {
     if (uri && !loadFailed) {
-      return <Image round={size} onError={() => setLoadFailed(true)} source={{uri}} resizeMode={resizeMode} />;
+      return (
+        <Image
+          style={{borderRadius: size / 2}}
+          width={size}
+          height={size}
+          onError={() => setLoadFailed(true)}
+          source={{uri}}
+          resizeMode={resizeMode}
+        />
+      );
     } else if (name) {
       if (/^\d+$/.test(name)) {
         // return <Icon solid type={'FontAwesome5'} name="user" color="primary" size={size / fontDecrease} />;
