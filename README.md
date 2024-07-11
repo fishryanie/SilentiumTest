@@ -1,79 +1,96 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# <h1 id='top' align="center">Welcome to FitMate 👋</h1>
 
-# Getting Started
+## Table of Contents
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the App](#running-the-app)
+- [Troubleshooting](#troubleshooting)
+- [☎️ Contact](#contact)
 
-## Step 1: Start the Metro Server
+## Introduction
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+[![Product Name Screen Shot][product-screenshot]](./demo.jpg)
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- View new/best/top stories on the screen
+- View details and comments for each post in the list.
 
-```bash
-# using npm
-npm start
+## Prerequisites
 
-# OR using Yarn
-yarn start
+Before you begin, ensure you have the following installed on your system:
+
+- [Node.js](https://nodejs.org/) (v12 or later)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+- [Git](https://git-scm.com/)
+- [React Native CLI](https://reactnative.dev/docs/environment-setup)
+- [Xcode](https://developer.apple.com/xcode/) (for iOS development)
+- [Android Studio](https://developer.android.com/studio) (for Android development)
+
+## 📲 Installation
+
+Follow these steps to get the development environment running.
+
+### Clone the repository
+
+```sh
+git clone https://github.com/your-username/your-repo.git
 ```
 
-## Step 2: Start your Application
+### Install package
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```javascript
+yarn;
 ```
 
-### For iOS
+Or
 
-```bash
-# using npm
-npm run ios
+```javascript
+npm install
+```
 
-# OR using Yarn
+#### Platform IOS install Pods
+
+If you using apple silicon
+
+```javascript
+yarn pod-install:apple-silicon
+```
+
+If you using intel silicon
+
+```javascript
+cd ios && pod-install && cd ..
+```
+
+### Running the App
+
+#### Run the iOS app
+
+```javascript
 yarn ios
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+#### Run the Android app
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+```javascript
+yarn android
+```
 
-## Step 3: Modifying your App
+## Troubleshooting
 
-Now that you have successfully run the app, let's modify it.
+If you encounter issues, consider the following steps:
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+- Ensure all prerequisites are installed correctly.
+- Verify that your emulators or devices are properly set up.
+- Check for any error messages in the terminal and follow the suggested solutions.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## ☎️ Contact
 
-## Congratulations! :tada:
+Project create by [Hồng Quân](https://github.com/fishryanie). If you have any questions or problems about the application, please contact me via email: [qphanquan1998@gmail.com](qphanquan1998@gmail.com).
 
-You've successfully run and modified your React Native App. :partying_face:
+You can also find me on Github at: [Phan Hồng Quân](https://github.com/fishryanie).
 
-### Now what?
+❤️ Thanks!
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+<p align="right">(<a href="#top">back to top</a>)</p>
