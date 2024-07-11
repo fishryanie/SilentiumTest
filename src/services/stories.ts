@@ -1,14 +1,21 @@
 import {StoriesApi, StoriesInfo} from 'types/news';
 import api from 'utils/axios';
 
-export const fetchStoriesList = async (url: StoriesApi) => {
+export const fetchStoriesIdsList = async (url: StoriesApi) => {
   try {
-    const storyResults = await api.get<number[]>(`${url}.json`);
-    const result = await Promise.all(storyResults.slice(0, 20).map(fetchStoriesDetail));
-    return result.filter((story): story is StoriesInfo => story !== undefined);
+    const result = await api.get<number[]>(`${url}.json`);
+    return result;
   } catch (error) {
     console.error(`Failed to fetch story list from ${url}:`, error);
   }
+};
+
+export const fetchStoriesList = async (ids: number[], page: number, pageSize: number): Promise<StoriesInfo[]> => {
+  const start = (page - 1) * pageSize;
+  const end = start + pageSize;
+  const pageIds = ids.slice(start, end);
+  const pageResults = await Promise.all(pageIds.map(fetchStoriesDetail));
+  return pageResults.filter((story): story is StoriesInfo => story !== undefined);
 };
 
 export const fetchStoriesDetail = async (id: number) => {

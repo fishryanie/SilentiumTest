@@ -12,8 +12,8 @@ export default function Routes() {
   return (
     <NavigationContainer ref={navigationRef} onReady={handleReadyNavigation}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="NewsScreen" component={screens.NewsScreen} />
-        <Stack.Screen name="NewsDetailScreen" component={screens.NewsDetailScreen} />
+        <Stack.Screen name="StoriesScreen" component={screens.StoriesScreen} />
+        <Stack.Screen name="StoriesDetailScreen" component={screens.StoriesDetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

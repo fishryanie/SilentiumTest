@@ -1,7 +1,7 @@
-import NewsDetailScreen from './NewsDetailScreen';
-import NewsScreen from './NewsScreen';
+import StoriesDetailScreen from './StoriesDetailScreen';
+import StoriesScreen from './StoriesScreen';
 
 export default {
-  NewsScreen,
-  NewsDetailScreen,
+  StoriesScreen,
+  StoriesDetailScreen,
 };

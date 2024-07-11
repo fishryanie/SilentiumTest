@@ -72,7 +72,7 @@ const ListInner = <T,>(
   if (isLoading && LoadingComponent) {
     return <LoadingComponent />;
   }
-  
+
   return (
     <FlatList
       contentContainerStyle={[
