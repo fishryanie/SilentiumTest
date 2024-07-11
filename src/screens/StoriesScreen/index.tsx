@@ -9,9 +9,9 @@ import StoryItem from './components/StoryItem';
 import StoryShimmer from './components/StoryShimmer';
 
 const listMenuStories: StoriesMenu[] = [
-  {title: 'New Stories', type: 'newstories'},
-  {title: 'Best Stories', type: 'beststories'},
   {title: 'Top Stories', type: 'topstories'},
+  {title: 'Best Stories', type: 'beststories'},
+  {title: 'New Stories', type: 'newstories'},
 ];
 
 const pageSize = 10;

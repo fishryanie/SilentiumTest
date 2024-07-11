@@ -14,7 +14,7 @@ const StoryItem: ListRenderItem<StoriesInfo> = ({item}) => (
     gap={5}
     padding={12}
     backgroundColor={COLORS.white}
-    onPress={() => navigationRef.navigate('NewsDetailScreen', {storyId: item.id})}>
+    onPress={() => navigationRef.navigate('StoriesDetailScreen', {storyId: item.id})}>
     <Block row>
       <Avatar name={item.by} size={40} marginRight={12} />
       <Block gap={5}>
